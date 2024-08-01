@@ -1,0 +1,36 @@
+name: osmanalysis
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - branca
+  - contextily
+  - dateutils
+  - folium
+  - geopandas
+  - ipywidgets
+  - matplotlib
+  - momepy
+  - networkx
+  - numpy
+  - pandas
+  - plotly
+  - pyogrio
+  - python-dateutil
+  - seaborn
+  - tqdm
+  - xyzservices
+  - ipykernel
+  - jupyter_client[version='<8']
+  - notebook
+  - pyzmq[version='<25']
+  - osm2geojson
+  - ipyleaflet
+  - shapely
+   - pip:
+    - osmnx>=2.0.0b0
+
+
+
+
