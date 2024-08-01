@@ -3,7 +3,6 @@ contextily
 dateutils
 folium
 geopandas
-ipywidgets
 matplotlib
 momepy
 networkx
@@ -13,12 +12,7 @@ plotly
 pyogrio
 python-dateutil
 seaborn
-tqdm
 xyzservices
-ipykernel
-jupyter-client<8
-notebook
-pyzmq<25
 ipyleaflet
 shapely
 osmnx>=2.0.0b0
