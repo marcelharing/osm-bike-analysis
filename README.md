@@ -1,5 +1,5 @@
 # OpenStreetMap Bike Analysis
-<img src="https://i.imgur.com/ML4PBFf.jpeg" alt="drawing" width="500"/><img src="https://i.imgur.com/HB73o3U.gif" alt="drawing" width="450"/>
+<img src="https://i.imgur.com/ML4PBFf.jpeg" alt="drawing" width="430"/><img src="https://i.imgur.com/HB73o3U.gif" alt="drawing" width="385"/>
 
 To start using the notebooks, just launch them with Google Colab or Binder. With this approach you can use the notebooks server-side.
 
