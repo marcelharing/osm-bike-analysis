@@ -1,6 +1,7 @@
 # OpenStreetMap Bike Analysis
 <img src="https://i.imgur.com/ML4PBFf.jpeg" alt="drawing" width="500" height="350"/><img src="https://i.imgur.com/HB73o3U.gif" alt="drawing" width="450"/>
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/marcelharing/osm-bike-analysis/HEAD)
 ## Installation
 It is recommended to load the notebooks via Google Colab or Binder. This makes them executable on the server side and eliminates the need for a complex installation.
 
