@@ -25,12 +25,9 @@ dependencies:
   - jupyter_client[version='<8']
   - notebook
   - pyzmq[version='<25']
-  - osm2geojson
   - ipyleaflet
   - shapely
-   - pip:
-    - osmnx>=2.0.0b0
-
-
-
-
+  - pip
+  - pip:
+      - osmnx>=2.0.0b0
+      - osm2geojson

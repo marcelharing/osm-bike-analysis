@@ -34,7 +34,7 @@ def to_data_dict(
         - query (str): The overpass turbo query statement to download the data.
     - area_name (str): The name of the study area.
     - diskpath (str): The path to the directory where the data will be saved.
-    - clip (bool): Whether to clip the data to the study area. Default is False.
+    - clip (bool): Whether to clip the data to the study area. Default is False. If False, data which reaches beyond the study area will be kept.
     - crs (bool): The coordinate reference system to reproject the data. Default is False.
     - gdf_area_crs (bool): The coordinate reference system of the study area. Default is False.
 
