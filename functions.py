@@ -255,7 +255,7 @@ def download_file(url):
         None
     """
     # Get header of server
-    response = requests.head(url, timeout=100)
+    response = requests.head(url)
     # File size specified in header
     file_size = int(response.headers["content-length"])
 
