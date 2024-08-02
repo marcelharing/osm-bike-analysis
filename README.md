@@ -18,10 +18,12 @@ Google Colab is more powerful than Binder, but you need your Google account to r
 ## Installation
 It is recommended to load the notebooks using Google Colab or Binder. This approach allows for server-side execution, simplifying the process by eliminating the need for complex installations.
 
-The specific requirements can be found in the ``environment_local.yml`` file. If  [Anaconda](https://anaconda.com/download) is already installed, open the Anaconda Prompt and navigate to the repository (which can be cloned via Git or downloaded directly from GitHub) using the ``cd`` command. Inside the repository, the environment.yml file contains all necessary dependencies.
+The specific requirements can be found in the ``environment_local.yml`` file. If  [Anaconda](https://anaconda.com/download) is already installed, open the Anaconda Prompt and navigate to the repository (which can be cloned via Git or downloaded directly from GitHub) using the ``cd`` command. Inside the repository, ``the environment.yml`` file contains all necessary dependencies.
 
 To create the environment, run the following command:
 
-``conda env create -f environment_local.yml``
+```
+conda env create -f environment_local.yml
+```
 
-The environment can then be used with JupyterLab or other editors like VS Code. 
+The environment is called ``osmanalysis`` and can be used with JupyterLab or other editors like VS Code. 
