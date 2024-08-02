@@ -233,7 +233,7 @@ def download_chunk(url, start, end, filename, pbar):
       filename (str): The name of the file to write the chunk to.
       pbar (ProgressBar): The progress bar to update after downloading the chunk.
     """
-    response = requests.get(url, headers={"Range": f"bytes={start}-{end}"}, timeout=500)
+    response = requests.get(url, headers={"Range": f"bytes={start}-{end}"})
     # Open file in binary mode for reading and writting
     with open(filename, "r+b") as fob:
         # Set start point at file object
