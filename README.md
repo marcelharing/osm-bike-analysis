@@ -5,7 +5,7 @@
 
 <img src="https://i.imgur.com/ML4PBFf.jpeg" alt="drawing" width="430"/><img src="https://i.imgur.com/HB73o3U.gif" alt="drawing" width="385"/>
 
-Google Colab is more powerful than Binder, but you need your Google account to run the notebook. For more information and a dcumentation, please refer to the [Wiki](https://github.com/marcelharing/osm-bike-analysis/wiki).
+Google Colab is more powerful than Binder, but you need your Google account to run the notebook. For more information and a full documentation, please refer to the [Wiki](https://github.com/marcelharing/osm-bike-analysis/wiki).
 
 | Notebook | Description | Google Colab | Binder |
 | -------- | ----------- | ------------ | ------ |
