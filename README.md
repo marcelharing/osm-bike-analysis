@@ -1,8 +1,11 @@
 # OpenStreetMap Bike Analysis
+**This programme allows you to easily perform quality checks on bicycle networks and automatically merge two different datasets. It is focused on Austria, but with OpenStreetMap data it can be used worldwide.**
+
+**To use the notebooks, simply launch them with Google Colab or Binder. This will allow you to use the notebooks in your browser.**
+
 <img src="https://i.imgur.com/ML4PBFf.jpeg" alt="drawing" width="430"/><img src="https://i.imgur.com/HB73o3U.gif" alt="drawing" width="385"/>
 
-To start using the notebooks, just launch them with Google Colab or Binder. With this approach you can use the notebooks in your browser. Google Colab is more performant than Binder, but you need your Google account when executing the notebook.
-
+Google Colab is more powerful than Binder, but you need your Google account to run the notebook. For more information and a dcumentation, please refer to the [Wiki](https://github.com/marcelharing/osm-bike-analysis/wiki).
 
 | Notebook | Description | Google Colab | Binder |
 | -------- | ----------- | ------------ | ------ |
@@ -21,4 +24,4 @@ To create the environment, run the following command:
 
 ``conda env create -f environment_local.yml``
 
-The environment can then be used with JupyterLab or other editors like VS Code. For more detailed information, please refer to the documentation in the [Wiki](https://github.com/marcelharing/osm-bike-analysis/wiki).
+The environment can then be used with JupyterLab or other editors like VS Code. 
