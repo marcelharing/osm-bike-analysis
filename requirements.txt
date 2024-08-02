@@ -15,6 +15,3 @@ seaborn
 xyzservices
 ipyleaflet
 mapclassify
-shapely
-osmnx>=2.0.0b0
-osm2geojson
