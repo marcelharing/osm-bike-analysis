@@ -6,7 +6,6 @@ dependencies:
   - python=3.10
   - branca
   - contextily
-  - dateutils
   - folium
   - geopandas
   - ipywidgets
@@ -22,9 +21,9 @@ dependencies:
   - tqdm
   - xyzservices
   - ipykernel
-  - jupyter_client[version='<8']
+  - jupyter_client<8
   - notebook
-  - pyzmq[version='<25']
+  - pyzmq<25
   - ipyleaflet
   - shapely
   - pip
