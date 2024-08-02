@@ -18,6 +18,6 @@ The specific requirements can be found in the ``environment_local.yml`` file. If
 
 To create the environment, run the following command:
 
-``conda env create -f environment.yml``
+``conda env create -f environment_local.yml``
 
 The environment can then be used with JupyterLab or other editors like VS Code. For more detailed information, please refer to the documentation in the [Wiki](https://github.com/marcelharing/osm-bike-analysis/wiki).
