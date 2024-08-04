@@ -243,7 +243,7 @@ def download_chunk(url, start, end, filename, pbar):
 
 
 def download_file(url):
-  """
+    """
     Downloads a file from the specified URL and saves it to the local disk.
     Uses ThreadPoolExecutor to start multiple tasks and download data chunks concurrently for more download speed.
 
@@ -251,38 +251,42 @@ def download_file(url):
         url (str): The URL of the file to download.
     Returns:
         None
-  """
-  # get header of server
-  response = requests.head(url)
-  # file size specified in header
-  file_size = int(response.headers['content-length'])
+    """
+    # get header of server
+    response = requests.head(url)
+    # file size specified in header
+    file_size = int(response.headers["content-length"])
 
-  chunk_size = 1024 * 1024 * 2 # 2^10 Bytes = 1048576 = 1024 *1024 = 1 MB
-  filename = url.split('/')[-1]
+    chunk_size = 1024 * 1024 * 2  # 2^10 Bytes = 1048576 = 1024 *1024 = 1 MB
+    filename = url.split("/")[-1]
 
-  # Create an empty file with file size containing null bites
-  with open(filename, 'wb') as fob:
-      fob.write(b'\0' * file_size)
+    # Create an empty file with file size containing null bites
+    with open(filename, "wb") as fob:
+        fob.write(b"\0" * file_size)
 
-  # Download each chunk of the file in a separate thread
-  #createprogress bat
-  with tqdm(total=file_size, unit='B', unit_scale=True, desc=filename) as pbar:
-    # multi-threaded (parallel) execution of tasks with ThreadPoolExecutor
-      with ThreadPoolExecutor(max_workers=30) as executor:
-          futures = []# list of tasks; future is a referall to task
-          #iterate over file with spacing chunk_size
-          for start in range(0, file_size, chunk_size):
-              end = min(start + chunk_size - 1, file_size - 1) # end byte chunk, shouldnt exceed file_size
-              #submit task to executer, download chunk, append to future list showing task has sumbitted
-              futures.append(executor.submit(download_chunk, url, start, end, filename, pbar))
-              #checking futures
-          for future in futures:
-              future.result()
+    # Download each chunk of the file in a separate thread
+    # createprogress bat
+    with tqdm(total=file_size, unit="B", unit_scale=True, desc=filename) as pbar:
+        # multi-threaded (parallel) execution of tasks with ThreadPoolExecutor
+        with ThreadPoolExecutor(max_workers=30) as executor:
+            futures = []  # list of tasks; future is a referall to task
+            # iterate over file with spacing chunk_size
+            for start in range(0, file_size, chunk_size):
+                end = min(
+                    start + chunk_size - 1, file_size - 1
+                )  # end byte chunk, shouldnt exceed file_size
+                # submit task to executer, download chunk, append to future list showing task has sumbitted
+                futures.append(
+                    executor.submit(download_chunk, url, start, end, filename, pbar)
+                )
+                # checking futures
+            for future in futures:
+                future.result()
 
-  # unzip, save and remove file
-  with zipfile.ZipFile(filename, 'r') as zip_ref:
-    zip_ref.extractall('gip_data')
-  os.remove(filename)
+    # unzip, save and remove file
+    with zipfile.ZipFile(filename, "r") as zip_ref:
+        zip_ref.extractall("gip_data")
+    os.remove(filename)
 
 
 def clean_turnuse(row, gdf_radvis):
