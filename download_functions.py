@@ -1,8 +1,10 @@
-import requests
-import zipfile
-import os
 from concurrent.futures import ThreadPoolExecutor
 from tqdm import tqdm
+import zipfile
+import os
+import requests
+
+
 
 def download_file(url):
   """
