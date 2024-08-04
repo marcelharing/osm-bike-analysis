@@ -7,7 +7,7 @@ matplotlib
 momepy
 networkx
 numpy
-pandas
+pandas>=2.2.0
 plotly
 pyogrio
 python-dateutil
