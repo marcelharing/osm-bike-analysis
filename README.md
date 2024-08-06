@@ -11,8 +11,10 @@
 | Conflation | Feature matching and conflating both datasets to a new dataset | <a target="_blank" href="https://colab.research.google.com/github/marcelharing/osm-bike-analysis/blob/master/Conflation.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> | not enough memory |
 | Timeseries Cycle Network| Bonus Notebook to create a timeseries animation|<a target="_blank" href="https://colab.research.google.com/github/marcelharing/osm-bike-analysis/blob/master/Time_Series_Cycle_Network.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>| [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/marcelharing/osm-bike-analysis/HEAD) |
 | Extrinsic Analysis worldwide | Same as Extrinsic Analysis, but only analyses OSM data and therefore usable not only in Austria, but worldwide|<a target="_blank" href="https://colab.research.google.com/github/marcelharing/osm-bike-analysis/blob/master/Extrinsic_Analysis_worldwide.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>| [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/marcelharing/osm-bike-analysis/HEAD) |
+
+Fore more information and a full documentation refer to the [Wiki](https://github.com/marcelharing/osm-bike-analysis/wiki).
 ## Use and Deploy
-To use the notebooks, simply launch them with Google Colab or Binder. This will allow you to use the notebooks in your browser. Google Colab is more powerful than Binder, but you need your Google account to run the notebook. More information and full documentation can be found in the [Wiki](https://github.com/marcelharing/osm-bike-analysis/wiki).
+To use the notebooks, simply launch them with Google Colab or Binder. This will allow you to use the notebooks in your browser. Google Colab is more powerful than Binder, but you need your Google account to run the notebook.
 
 However, deploying the script locally on your computer is a bit more work, but it is also more stable and more powerful.
 ## Local Installation
