@@ -13,7 +13,7 @@ pyogrio
 python-dateutil
 seaborn>=0.13.2
 xyzservices
-ipyleaflet>=0.19.1
+ipyleaflet
 mapclassify
 shapely
 osmnx>=2.0.0b0
