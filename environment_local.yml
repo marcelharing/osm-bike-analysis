@@ -3,28 +3,28 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.10
+  - python==3.10
   - branca
   - contextily
-  - folium
-  - geopandas
+  - folium>=0.16.0
+  - geopandas==0.14.*
   - ipywidgets
-  - matplotlib
+  - matplotlib>=3.8
   - momepy
   - networkx
   - numpy
-  - pandas
-  - plotly
+  - pandas>=2.2.0
+  - plotly>=5.22.0
   - pyogrio
   - python-dateutil
-  - seaborn
+  - seaborn>=0.13.2
   - tqdm
   - xyzservices
   - ipykernel
   - jupyter_client<8
   - notebook
   - pyzmq<25
-  - ipyleaflet
+  - ipyleaflet=0.19.1
   - shapely
   - pip
   - pip:
