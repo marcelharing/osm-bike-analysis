@@ -1,7 +1,7 @@
 # OpenStreetMap Bike Analysis
 **This programme allows you to easily perform quality checks on bicycle networks and automatically merge two different datasets. It is focused on Austria, but with OpenStreetMap data it can be used worldwide.**
 
-<img src="https://i.imgur.com/ML4PBFf.jpeg" alt="drawing" width="430"/><img src="https://i.imgur.com/HB73o3U.gif" alt="drawing" width="385"/>
+<img src="https://i.imgur.com/ML4PBFf.jpeg" alt="collection of maps and charts" width="430"/><img src="https://i.imgur.com/HB73o3U.gif" alt="time series animation" width="385"/>
 
 
 | Notebook | Description | Google Colab | Binder |
@@ -12,7 +12,12 @@
 | Timeseries Cycle Network| Bonus Notebook to create a timeseries animation|<a target="_blank" href="https://colab.research.google.com/github/marcelharing/osm-bike-analysis/blob/master/Time_Series_Cycle_Network.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>| [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/marcelharing/osm-bike-analysis/HEAD) |
 | Extrinsic Analysis worldwide | Same as Extrinsic Analysis, but only analyses OSM data and therefore usable not only in Austria, but worldwide|<a target="_blank" href="https://colab.research.google.com/github/marcelharing/osm-bike-analysis/blob/master/Extrinsic_Analysis_worldwide.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>| [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/marcelharing/osm-bike-analysis/HEAD) |
 
-Fore more information and a full documentation refer to the [Wiki](https://github.com/marcelharing/osm-bike-analysis/wiki).
+Fore more information and a full documentation refer to the **[Wiki](https://github.com/marcelharing/osm-bike-analysis/wiki)**. A process diagram, which illustrates the evaluation of the notebooks, is presented below. 
+
+<p align="center">
+    <img src="https://i.imgur.com/puCfQfj.png" alt="drawing" width="430"/>
+</p>
+
 ## Use and Deploy
 To use the notebooks, simply launch them with Google Colab or Binder. This will allow you to use the notebooks in your browser. Google Colab is more powerful than Binder, but you need your Google account to run the notebook.
 
