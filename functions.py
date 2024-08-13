@@ -341,24 +341,25 @@ def create_node_edge_model(
     """
 
     #### DICT TURNUSE CONNECTION AMOUNT AND DICT NODES  COORDINATES ####
-    # Calculate how much turnuse connections each node (intersection) has and save it in a dictionary with node id as key
+    # Calculate how much turnuse connections each intersection node has and save it in a dictionary with node id as key
     dict_turnuse_connection_amount = {}
     for _, line in gdf_turnuse_cleaned.iterrows():
-        # If already in dict_help_turnuse add 1
+        # If already in dict_help_turnuse add 1 for further connection
         if line.VIA_NODE_ID in dict_turnuse_connection_amount.keys():
             dict_turnuse_connection_amount[line.VIA_NODE_ID] += 1
         else:
             dict_turnuse_connection_amount[line.VIA_NODE_ID] = 1
 
-    # Dict of nodes node geometry/coordinates: built dict to call from every node the geometry/coordinates with its OBJECTID
+    # Dict of intersection nodes geometry/coordinates: 
+    # built dict to call from every node the geometry/coordinates with its OBJECTID
     dict_help_nodes = {}
     for _, node in gdf_gip_nodes.iterrows():
         node_coor = node.geometry.coords[0]
         dict_help_nodes[node.OBJECTID] = node_coor
 
-    #### NEW NETWORK CONSTRUCTION ####
-    # Get node of nodes and connect it with first and end point of every line string of turnuse
-    # Every line is then connected with the node at intersections (edge-node model)
+    #### NEW MODEL CONSTRUCTION ####
+    # Get intersection node geometry and built new LineString to it with first and last point of every turnuse LineString
+    # As a result, every edge is then connected with the node at intersections (node-edge model)
     connected_lines = []
     attributes = []
     for _, line in gdf_turnuse_cleaned.iterrows():
@@ -368,9 +369,10 @@ def create_node_edge_model(
             key = line.VIA_NODE_ID
             node_coord = dict_help_nodes[key]
 
-            # If there are only 1 or 2 connections via a node, connect edges directly (because turnuse line is 
-            # then connected directly, connecting over node would take a detour) else connect them via node
-            # Create a new LineString and add original Turnuse attributes
+            # If there are only 1 or 2 connections via a node, connect edges directly (because Turnuse line is then also
+            # connected directly, connecting over intersection node would take a detour) otherwise connect them via intersection node
+            # For connections, create new LineString and add original Turnuse attributes
+
             if (
                 dict_turnuse_connection_amount[line.VIA_NODE_ID] == 1
                 or dict_turnuse_connection_amount[line.VIA_NODE_ID] == 2
