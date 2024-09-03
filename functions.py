@@ -18,6 +18,8 @@ import osm2geojson
 from shapely import line_merge
 from shapely import unary_union 
 from shapely.geometry import LineString
+from matplotlib_scalebar.scalebar import ScaleBar
+
 
 
 def to_data_dict(
@@ -952,6 +954,10 @@ def plot_infr(dict_class, label, nominatim_area):
             ax,
             source="https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=3ad11fafa2564c1183c66f15224857b5",
         )
+
+        # Add scale bar
+        scalebar = ScaleBar(1, location='lower right')  # 1 pixel = 1 meter
+        ax.add_artist(scalebar)
 
         # calculate bearing and orientation 
         # https://osmnx--1106.org.readthedocs.build/en/1106/user-reference.html#osmnx.plot.plot_orientation
