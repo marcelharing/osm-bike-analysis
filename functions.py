@@ -20,6 +20,39 @@ from shapely import unary_union
 from shapely.geometry import LineString
 from matplotlib_scalebar.scalebar import ScaleBar
 
+OVERPASS_SERVERS = [
+    "https://overpass-api.de/api/interpreter",
+    "https://lz4.overpass-api.de/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter",
+]
+
+OVERPASS_HEADERS = {
+    "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Referer": "https://overpass-api.de/",
+}
+
+
+def overpass_call(query, servers=None, headers=None, timeout=120):
+    if servers is None:
+        servers = OVERPASS_SERVERS
+    if headers is None:
+        headers = OVERPASS_HEADERS
+    last_exception = None
+    for endpoint in servers:
+        try:
+            response = requests.post(endpoint, data={"data": query}, headers=headers, timeout=timeout)
+            if response.status_code == 200:
+                return response.text
+            last_exception = requests.exceptions.HTTPError(
+                f"Overpass server respond with status {response.status_code} from {endpoint}"
+            )
+        except requests.exceptions.RequestException as exc:
+            last_exception = exc
+    if last_exception is None:
+        raise requests.exceptions.HTTPError("Overpass server request failed without a response")
+    raise last_exception
 
 
 def to_data_dict(
@@ -45,7 +78,7 @@ def to_data_dict(
     for infr_class in ls_classes:
         # Query with overpass turbo query statement defined above and save to xml string
         if infr_class["query"]:  # if query is empty, dict_own query was not defined by user
-            xml_string = osm2geojson.overpass_call(infr_class["query"])
+            xml_string = overpass_call(infr_class["query"])
 
             # Create the directory if it doesn't exist
             os.makedirs(f"{diskpath}/osm_data", exist_ok=True)
@@ -950,10 +983,13 @@ def plot_infr(dict_class, label, nominatim_area):
             f"{label} in {nominatim_area} and their orientation (in the cardinal directions)"
         )
         ax.set_axis_off()
-        cx.add_basemap(
-            ax,
-            source="https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=3ad11fafa2564c1183c66f15224857b5",
-        )
+        try:
+            cx.add_basemap(
+                ax,
+                source="https://tile.opentopomap.org/{z}/{x}/{y}.png",
+            )
+        except Exception as ex:
+            print(f"Warning: Basemap could not be loaded: {ex}")
 
         # Add scale bar
         scalebar = ScaleBar(1, location='lower right')  # 1 pixel = 1 meter
