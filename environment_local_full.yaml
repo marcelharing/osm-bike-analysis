@@ -323,6 +323,7 @@ dependencies:
       - jupyter-leaflet==0.19.1
       - matplotlib-scalebar==0.8.1
       - mypy-extensions==1.0.0
+      - ohsome==0.3.3
       - osm2geojson==0.2.5
       - osmnx==2.0.0b0
       - pathspec==0.12.1

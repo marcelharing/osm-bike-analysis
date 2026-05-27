@@ -12,7 +12,7 @@ dependencies:
   - matplotlib>=3.8
   - momepy
   - networkx
-  - numpy
+  - numpy<2.0.0
   - pandas>=2.2.0
   - plotly>=5.22.0
   - pyogrio
@@ -28,6 +28,7 @@ dependencies:
   - shapely
   - pip
   - pip:
+      - ohsome==0.3.3
       - osmnx>=2.0.0b0
       - osm2geojson
       - matplotlib_scalebar
