@@ -1025,11 +1025,11 @@ def load_plot(area, URL, querydict, roads=False, ylabel="Value"):
     opwizquery_own = querydict["own"]
     opwizquery_main_roads = querydict["main_roads"]
 
-    # Set current year and month for API query; 
-    # subtract 2 months because OSHOME API has a time delay (otherwise may gives back error)
-    dt_2_months_delay = datetime.today() - relativedelta(months=2)
-    year = dt_2_months_delay.strftime("%Y")
-    month = dt_2_months_delay.strftime("%m")
+    # Set current year and month for API query;
+    # subtract 3 months because the API data trail can lag behind the current date
+    dt_3_months_delay = datetime.today() - relativedelta(months=3)
+    year = dt_3_months_delay.strftime("%Y")
+    month = dt_3_months_delay.strftime("%m")
 
     def inner_fetch(filter_str):
 
